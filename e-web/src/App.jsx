@@ -6,6 +6,9 @@ import Home from './pages/Home';
 import Company from './pages/Company';
 import Landing from './pages/Landing'; 
 import Contact from './pages/Contact';
+import { IoMdHelp } from 'react-icons/io';
+import Resources from './pages/Resources';
+import Help from './pages/Help';
 
 function App() {
   return (
@@ -16,6 +19,8 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/company" element={<Company />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/resource" element={<Resources />} />
+        <Route path="/Help" element={<Help />} />
       </Routes>
     </>
   );

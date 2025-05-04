@@ -12,18 +12,18 @@ const Navbar = () => {
       <div className="max-w-[1240px] mx-auto flex justify-between items-center h-24">
         
         {/* Logo */}
-        <h1 className="text-3xl font-bold text-[#00df9a]">React.</h1>
+        <h1 className="text-3xl font-bold text-[#00df9a]">AzizTech</h1>
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-6">
           <li className="hover:text-[#00df9a] transition duration-300 cursor-pointer"><Link to="/home">Home</Link></li>
           <li className="hover:text-[#00df9a] transition duration-300 cursor-pointer"><Link to="/company">Company</Link></li>
-          <li className="hover:text-[#00df9a] transition duration-300 cursor-pointer">Resources</li>
-          <li className="hover:text-[#00df9a] transition duration-300 cursor-pointer">About</li>
+          <li className="hover:text-[#00df9a] transition duration-300 cursor-pointer"><Link to="/resource">Resources</Link></li>
+          <li className="hover:text-[#00df9a] transition duration-300 cursor-pointer"><Link to ="/help">Help</Link></li>
           <li className="hover:text-[#00df9a] transition duration-300 cursor-pointer"><Link to="/contact">Contact</Link></li>
         </ul>
 
-        {/* Hamburger Icon (mobile only) */}
+        
         <div
           onClick={handlenav}
           className="md:hidden cursor-pointer z-50 hover:scale-110 transition-transform duration-300"
@@ -31,14 +31,14 @@ const Navbar = () => {
           {nav ? <IoIosClose size={25} /> : <RiMenuSearchLine size={25} />}
         </div>
 
-        {/* Mobile Menu */}
+        
         <div
           className={`md:hidden fixed top-0 right-0 w-[60%] h-full bg-[#000300] border-l border-gray-900 z-40 transition-transform duration-500 ${
             nav ? 'translate-x-0' : 'translate-x-full'
           }`}
         >
           <div className="flex justify-between items-center p-4">
-            <h1 className="text-3xl font-bold text-[#00df9a]">React.</h1>
+            <h1 className="text-3xl font-bold text-[#00df9a]">AzizTech</h1>
            
           </div>
           <ul className="uppercase p-4 space-y-4">
@@ -63,7 +63,7 @@ const Navbar = () => {
 </li>
 
 <li className="border-b border-gray-600 pb-2 hover:text-[#00df9a] focus:text-[#00df9a] active:text-[#00df9a] transition duration-300">
-  About
+  Help
 </li>
 
 <li className="border-b border-gray-600 pb-2">
