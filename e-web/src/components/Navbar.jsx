@@ -20,7 +20,7 @@ const Navbar = () => {
           <li className="hover:text-[#00df9a] transition duration-300 cursor-pointer"><Link to="/company">Company</Link></li>
           <li className="hover:text-[#00df9a] transition duration-300 cursor-pointer">Resources</li>
           <li className="hover:text-[#00df9a] transition duration-300 cursor-pointer">About</li>
-          <li className="hover:text-[#00df9a] transition duration-300 cursor-pointer">Contact</li>
+          <li className="hover:text-[#00df9a] transition duration-300 cursor-pointer"><Link to="/contact">Contact</Link></li>
         </ul>
 
         {/* Hamburger Icon (mobile only) */}
@@ -42,9 +42,7 @@ const Navbar = () => {
            
           </div>
           <ul className="uppercase p-4 space-y-4">
-          <li className="border-b border-gray-600 pb-2">
-  <Link
-    to="/home"
+          <li className="border-b border-gray-600 pb-2"><Link to="/home"
     className="hover:text-[#00df9a] focus:text-[#00df9a] active:text-[#00df9a] transition duration-300"
   >
     Home
@@ -68,8 +66,13 @@ const Navbar = () => {
   About
 </li>
 
-<li className="hover:text-[#00df9a] focus:text-[#00df9a] active:text-[#00df9a] transition duration-300">
-  Contact
+<li className="border-b border-gray-600 pb-2">
+  <Link
+    to="/contact"
+    className="hover:text-[#00df9a] focus:text-[#00df9a] active:text-[#00df9a] transition duration-300"
+  >
+    Contact 
+  </Link>
 </li>
 
           </ul>
