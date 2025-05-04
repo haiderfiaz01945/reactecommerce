@@ -59,11 +59,11 @@ const Navbar = () => {
 </li>
 
 <li className="border-b border-gray-600 pb-2 hover:text-[#00df9a] focus:text-[#00df9a] active:text-[#00df9a] transition duration-300">
-  Resources
+  <Link to ="/resource">Resources</Link>
 </li>
 
 <li className="border-b border-gray-600 pb-2 hover:text-[#00df9a] focus:text-[#00df9a] active:text-[#00df9a] transition duration-300">
-  Help
+ <Link to ="/help">Help</Link> 
 </li>
 
 <li className="border-b border-gray-600 pb-2">

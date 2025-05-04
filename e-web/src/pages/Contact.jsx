@@ -2,33 +2,49 @@ import React, { useRef } from "react";
 import emailjs from '@emailjs/browser';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Footer from "../components/Footer";
 
 const Contact = () => {
   const form = useRef();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+  
+    const formData = new FormData(form.current);
+    const user_name = formData.get('user_name');
+    const user_email = formData.get('user_email');
+    const message = formData.get('message');
+  
     emailjs.sendForm(
-      'service_fqrzmsd',      
-      'template_a9ls28u',     
+      'service_fqrzmsd',
+      'template_a9ls28u',
       form.current,
-      'Ac-dhmFbROV__5uNp'      
-    ).then(
-      () => {
-        toast.success("Your message has been sent!");
-        form.current.reset();
-      },
-      (error) => {
-        toast.error("Something went wrong. Please try again.");
-        console.error(error);
-      }
-    );
+      'Ac-dhmFbROV__5uNp'
+    ).then(() => {
+      // Auto-reply to user using second template
+      return emailjs.send(
+        'service_fqrzmsd',
+        'template_wmpn0ci',
+        {
+          user_name: user_name,
+          user_email: user_email,
+          message: message
+        },
+        'Ac-dhmFbROV__5uNp'
+      );
+    }).then(() => {
+      toast.success("Your message has been sent!");
+      form.current.reset();
+    }).catch((error) => {
+      toast.error("Something went wrong. Please try again.");
+      console.error(error);
+    });
   };
+  
 
   return (
-    <div className="min-h-screen bg-[#000300] flex items-center justify-center p-6">
-      <div className="bg-white shadow-2xl rounded-2xl p-8 w-full max-w-xl">
+    <div className="flex flex-col min-h-screen bg-[#000300] items-center justify-center p-6">
+      <div className="flex-grow bg-white shadow-2xl rounded-2xl p-8 w-full max-w-xl">
         <h2 className="text-3xl font-bold text-[#1f2937] mb-6 text-center">Contact Us</h2>
         
       
@@ -77,6 +93,7 @@ const Contact = () => {
           <ToastContainer position="top-center" autoClose={2000} />
         </form>
       </div>
+      <Footer />
     </div>
   );
 };
