@@ -74,7 +74,7 @@ const Navbar = () => {
   >
     Contact 
   </Link>
-  <li className="hover:text-[#00df9a] focus:text-[#00df9a] active:text-[#00df9a] transition duration-300 cursor-pointer"><Link to="/contact">Contact</Link></li>
+  <li className="hover:text-[#00df9a] focus:text-[#00df9a] active:text-[#00df9a] transition duration-300 cursor-pointer"><Link to="/signup">Sign up</Link></li>
 </li>
 
           </ul>
