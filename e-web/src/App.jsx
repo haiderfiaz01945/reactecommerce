@@ -9,6 +9,7 @@ import Contact from './pages/Contact';
 import { IoMdHelp } from 'react-icons/io';
 import Resources from './pages/Resources';
 import Help from './pages/Help';
+import Signup from './pages/Signup';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/resource" element={<Resources />} />
         <Route path="/Help" element={<Help />} />
+        <Route path="/signup" element={<Signup />} />
       </Routes>
     </>
   );
