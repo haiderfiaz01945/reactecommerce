@@ -4,6 +4,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "firebase/auth";
+import Footer from "../components/Footer";
 
 const Signup = () => {
   const [isSignUp, setIsSignUp] = useState(true);
@@ -18,21 +19,19 @@ const Signup = () => {
 
     try {
       if (isSignUp) {
-        // Sign up with Firebase
         await createUserWithEmailAndPassword(auth, email, password);
-        alert("Account created!");
+        alert("Account Created!");
       } else {
-        // Sign in with Firebase
         await signInWithEmailAndPassword(auth, email, password);
-        alert("Logged in!");
+        alert("Account Logged in!");
       }
     } catch (err) {
       setError(err.message);
     }
-  };
+  }; // ✅ this closing brace was missing!
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#000300] px-4">
+    <div className="flex flex-col min-h-screen items-center justify-center bg-[#000300] px-4">
       <div className="bg-white p-8 rounded-xl shadow-lg w-full max-w-md">
         <div className="flex justify-center mb-6">
           <button
@@ -95,6 +94,7 @@ const Signup = () => {
           </p>
         )}
       </div>
+      <Footer />
     </div>
   );
 };
