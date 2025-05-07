@@ -43,7 +43,8 @@ const Navbar = () => {
            
           </div>
           <ul className="uppercase p-4 space-y-4">
-          <li className="border-b border-gray-600 pb-2"><Link to="/home"
+          <li className="border-b border-gray-600 pb-2"><Link to="/home" 
+          onClick={() => setNav(false)}
     className="hover:text-[#00df9a] focus:text-[#00df9a] active:text-[#00df9a] transition duration-300"
   >
     Home
@@ -53,6 +54,7 @@ const Navbar = () => {
 <li className="border-b border-gray-600 pb-2">
   <Link
     to="/company"
+    onClick={() => setNav(false)}
     className="hover:text-[#00df9a] focus:text-[#00df9a] active:text-[#00df9a] transition duration-300"
   >
     Company
@@ -60,22 +62,29 @@ const Navbar = () => {
 </li>
 
 <li className="border-b border-gray-600 pb-2 hover:text-[#00df9a] focus:text-[#00df9a] active:text-[#00df9a] transition duration-300">
-  <Link to ="/resource">Resources</Link>
+  <Link to ="/resource" 
+  onClick={() => setNav(false)}
+  >Resources</Link>
 </li>
 
 <li className="border-b border-gray-600 pb-2 hover:text-[#00df9a] focus:text-[#00df9a] active:text-[#00df9a] transition duration-300">
- <Link to ="/help">Help</Link> 
+ <Link to ="/help"
+ onClick={() => setNav(false)}
+ >Help</Link> 
 </li>
 
 <li className="border-b border-gray-600 pb-2">
   <Link
     to="/contact"
+    onClick={() => setNav(false)}
     className="hover:text-[#00df9a] focus:text-[#00df9a] active:text-[#00df9a] transition duration-300"
   >
     Contact 
   </Link>
   </li>
-  <li className="hover:text-[#00df9a] focus:text-[#00df9a] active:text-[#00df9a] transition duration-300 cursor-pointer"><Link to="/signup">Sign up</Link></li>
+  <li className="hover:text-[#00df9a] focus:text-[#00df9a] active:text-[#00df9a] transition duration-300 cursor-pointer"><Link to="/signup"
+  onClick={() => setNav(false)}
+  >Sign up</Link></li>
 
 
           </ul>

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom"; // ✅ for redirect
 import { auth } from "../firebase";
 import {
   createUserWithEmailAndPassword,
@@ -12,6 +13,7 @@ const Signup = () => {
   const [password, setPassword] = useState("");
   const [fullName, setFullName] = useState("");
   const [error, setError] = useState("");
+  const navigate = useNavigate(); 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -25,10 +27,12 @@ const Signup = () => {
         await signInWithEmailAndPassword(auth, email, password);
         alert("Account Logged in!");
       }
+
+      navigate("/"); 
     } catch (err) {
       setError(err.message);
     }
-  }; // ✅ this closing brace was missing!
+  };
 
   return (
     <div className="flex flex-col min-h-screen items-center justify-center bg-[#000300] px-4">
