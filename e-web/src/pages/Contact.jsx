@@ -4,6 +4,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Footer from "../components/Footer";
 
+
+
 const Contact = () => {
   const form = useRef();
 
@@ -21,7 +23,7 @@ const Contact = () => {
       form.current,
       'Ac-dhmFbROV__5uNp'
     ).then(() => {
-      // Auto-reply to user using second template
+    
       return emailjs.send(
         'service_fqrzmsd',
         'template_wmpn0ci',

@@ -57,7 +57,7 @@ const Resources = () => {
         </div>
       </div>
 
-      {/* Footer (full width) */}
+   
       <Footer />
     </div>
   );

@@ -62,7 +62,6 @@ const Help = () => {
         </div>
       </div>
 
-      {/* Footer at full width */}
       <Footer />
     </div>
   );
